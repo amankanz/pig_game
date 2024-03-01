@@ -3,37 +3,39 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  /* box-sizing: border-box; */
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
-  height: 100vh;
   color: #333;
   background-image: linear-gradient(to top left, #cbbf6a 0%, #bf472e 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  height: 100vh;
 }
 
 /* === LAYOUT === */
 main {
-  position: relative;
-  width: 70rem;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
   height: 80vh;
+  width: 70rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   overflow: hidden;
-  display: flex;
+  margin: 10vh auto;
 }
 
 .player {
@@ -44,7 +46,16 @@ main {
   align-items: center;
   transition: all 0.75s;
 }
-
+.rootReactVNB {
+  width: 0vw;
+  position: fixed;
+  z-index: 2000000000;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  top: 0px;
+  left: 0px;
+}
 /* === ELEMENTS === */
 .name {
   position: relative;
@@ -122,12 +133,6 @@ main {
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
-.btn::first-letter {
-  font-size: 2.4rem;
-  display: inline-block;
-  margin-right: 0.7rem;
-}
-
 .btn--new {
   top: 4rem;
 }
@@ -170,6 +175,7 @@ main {
   top: 40%;
   left: 21%;
 }
+
 .player--winner .name {
   font-weight: 700;
   color: #d54b19;
