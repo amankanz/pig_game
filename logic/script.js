@@ -14,9 +14,13 @@ const btn_new = document.querySelector('.btn--new');
 const btn_roll = document.querySelector('.btn--roll');
 const btn_hold = document.querySelector('.btn--hold');
 
+// const winner_trophy = document.querySelector('.trophy');
+
 // Starting Condition
 let scores, currentScore, activePlayer, playing;
-const total_score = 20;
+const total_score = 10;
+
+const img = document.createElement('img');
 
 const init_game = function () {
   score_0_el.textContent = 0;
@@ -35,6 +39,9 @@ const init_game = function () {
   player_1_el.classList.remove('player--winner');
   dice_el.classList.add('hidden');
 
+  // Trophy
+  img.remove();
+
   // Set Player 1 as active player
   player_0_el.classList.add('player--active');
 };
@@ -47,6 +54,16 @@ const switch_player = function () {
 
   player_0_el.classList.toggle('player--active');
   player_1_el.classList.toggle('player--active');
+};
+
+const winner = function () {
+  img.classList.add('trophy');
+  activePlayer === 0
+    ? img.classList.add('trophy_0')
+    : img.classList.add('trophy_1');
+  img.src = `assets/trophy.png`;
+  if (scores[activePlayer] >= total_score)
+    document.querySelector(`.player--${activePlayer}`).appendChild(img);
 };
 
 // Rolling dice functionality
@@ -90,6 +107,7 @@ btn_hold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
+      winner();
     } else {
       // 3. If false switch to the next player
       switch_player();

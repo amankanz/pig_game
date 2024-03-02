@@ -162,20 +162,19 @@ main {
 .player--winner {
   background-color: #3b3b3b;
 }
-.winner,
-.looser {
+.trophy {
   position: absolute;
-  font-size: 4rem;
+  height: 10rem;
+  width: auto;
 }
-.winner {
-  right: 21%;
-  top: 40%;
+.trophy_0 {
+  right: 68%;
+  top: 14rem;
 }
-.looser {
-  top: 40%;
-  left: 21%;
+.trophy_1 {
+  left: 68%;
+  top: 14rem;
 }
-
 .player--winner .name {
   font-weight: 700;
   color: #d54b19;
