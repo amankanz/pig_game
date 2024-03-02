@@ -18,7 +18,7 @@ const btn_hold = document.querySelector('.btn--hold');
 
 // Starting Condition
 let scores, currentScore, activePlayer, playing;
-const total_score = 10;
+const total_score = 100;
 
 const img = document.createElement('img');
 
