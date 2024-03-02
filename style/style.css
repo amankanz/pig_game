@@ -3,12 +3,11 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  /* box-sizing: border-box; */
 }
 
 body {
@@ -16,17 +15,13 @@ body {
   font-weight: 400;
   color: #333;
   background-image: linear-gradient(to top left, #cbbf6a 0%, #bf472e 100%);
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   height: 100vh;
+  position: relative;
 }
 
 /* === LAYOUT === */
 main {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   height: 80vh;
   width: 70rem;
   background-color: rgba(255, 255, 255, 0.35);
@@ -179,7 +174,129 @@ main {
   font-weight: 700;
   color: #d54b19;
 }
+.btn--guide {
+  position: fixed;
+  top: 80%;
+}
 
 .hidden {
   display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    position: inherit;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  main {
+    flex-direction: column-reverse;
+    overflow: unset;
+    height: 70%;
+    width: 70%;
+    margin: 35% auto;
+  }
+  .btn {
+    position: fixed;
+    left: 50%;
+  }
+  .btn--new {
+    top: -8%;
+    left: 50%;
+  }
+  .btn--guide {
+    top: -15%;
+    left: 50%;
+  }
+  .btn--roll {
+    top: 105%;
+    left: 50%;
+  }
+  .btn--hold {
+    top: 112%;
+    left: 50%;
+  }
+  .dice {
+    top: 48%;
+  }
+  .player {
+    padding: 12%;
+  }
+  .name {
+    margin-top: 4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    height: 70%;
+    width: 80%;
+    margin: 60% auto;
+  }
+  .dice {
+    height: 5rem;
+    top: 48%;
+  }
+  .player {
+    padding: 3%;
+    /* height: 6rem; */
+  }
+  .score {
+    font-size: 3.5rem;
+    margin-bottom: 3%;
+  }
+  .name {
+    margin-top: 4rem;
+  }
+  .current {
+    width: 35%;
+    padding: 1%;
+  }
+  .btn--new {
+    top: -5%;
+    left: 50%;
+  }
+  .btn--guide {
+    top: -12%;
+    left: 50%;
+  }
+  .btn--roll {
+    top: 105%;
+    left: 50%;
+  }
+  .btn--hold {
+    top: 110%;
+    left: 50%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body {
+    position: inherit;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  main {
+    height: 70%;
+    width: 80%;
+    margin: 70% auto;
+  }
+  .btn--new {
+    top: -5%;
+    left: 50%;
+  }
+  .btn--guide {
+    top: -10%;
+    left: 50%;
+  }
+  .btn--roll {
+    top: 105%;
+    left: 50%;
+  }
+  .btn--hold {
+    top: 110%;
+    left: 50%;
+  }
+  .dice {
+    height: 5rem;
+  }
 }

@@ -1,5 +1,7 @@
 # Pig Game Readme
 
+- Link to the Game: https://amankanz.github.io/pig_game/
+
 ## Introduction
 
 Welcome to the Pig Game! This is a two-player game where each player takes turns rolling a six-sided dice to accumulate points. The goal is to be the first player to reach a total score of 100 or more.
