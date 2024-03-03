@@ -14,6 +14,11 @@ const btn_new = document.querySelector('.btn--new');
 const btn_roll = document.querySelector('.btn--roll');
 const btn_hold = document.querySelector('.btn--hold');
 
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const close_modal_btn = document.querySelector('.close-modal');
+const show_modal_btn = document.querySelector('.btn--guide');
+
 // const winner_trophy = document.querySelector('.trophy');
 
 // Starting Condition
@@ -42,6 +47,9 @@ const init_game = function () {
   // Trophy
   img.remove();
 
+  // Guide btn active
+  show_modal_btn.classList.remove('hidden');
+
   // Set Player 1 as active player
   player_0_el.classList.add('player--active');
 };
@@ -69,6 +77,9 @@ const winner = function () {
 // Rolling dice functionality
 btn_roll.addEventListener('click', function () {
   if (playing) {
+    // Guide btn hidden
+    show_modal_btn.classList.add('hidden');
+
     // 1. Generating a random dice
     const dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -117,3 +128,25 @@ btn_hold.addEventListener('click', function () {
 
 // Resetting functionality
 btn_new.addEventListener('click', init_game);
+
+// GUIDE COMPONENT
+const open_modal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+const close_modal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+show_modal_btn.addEventListener('click', open_modal);
+
+close_modal_btn.addEventListener('click', close_modal);
+overlay.addEventListener('click', close_modal);
+
+// Global Event
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    close_modal();
+  }
+});

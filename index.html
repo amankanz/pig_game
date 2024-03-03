@@ -9,6 +9,81 @@
   </head>
   <body>
     <main>
+      <section class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>Intro 🎲 😍</h1>
+        <p>
+          Welcome to the Pig Game! This is a two-player game where each player
+          takes turns rolling a six-sided dice to accumulate points. The goal is
+          to be the first player to reach a total score of 100 or more.
+        </p>
+        <h2>Rules</h2>
+        <ol>
+          <li>
+            Each turn, a player rolls the dice, and the number rolled is added
+            to their current score.
+          </li>
+          <li>
+            If a player rolls a 1, their current score is reset to 0, and their
+            turn ends.
+          </li>
+          <li>
+            Players can choose to continue rolling to accumulate more points or
+            hold to save their current score and switch to the next player.
+          </li>
+          <li>The first player to reach or exceed 100 points wins the game.</li>
+        </ol>
+
+        <h2>Game Flow</h2>
+        <ol>
+          <li>
+            Start the game with an initial total score of 0 for both players.
+          </li>
+          <li>
+            Player 1 begins by rolling the dice.
+            <ul>
+              <li>
+                If the roll is not a 1, the number is added to Player 1's
+                current score.
+              </li>
+              <li>
+                If the roll is a 1, Player 1's turn ends, and their current
+                score is reset to 0.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Player 1 can choose to roll again or hold.
+            <ul>
+              <li>
+                If they choose to hold, their current score is added to their
+                total score, and it becomes Player 2's turn.
+              </li>
+              <li>
+                If they choose to roll and get a 1, their current score resets
+                to 0, and Player 2's turn begins.
+              </li>
+            </ul>
+          </li>
+          <li>
+            The game continues with players taking turns until one player
+            reaches or exceeds 100 points.
+          </li>
+        </ol>
+        <h2>Strategy Tips</h2>
+        <ul>
+          <li>
+            Be cautious when rolling to avoid getting a 1 and losing all your
+            current points.
+          </li>
+          <li>
+            Consider holding when you've accumulated a substantial number of
+            points to secure them.
+          </li>
+        </ul>
+      </section>
+      <div class="overlay hidden"></div>
+
       <section class="player player--0 player--active">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
