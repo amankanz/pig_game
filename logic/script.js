@@ -19,8 +19,6 @@ const overlay = document.querySelector('.overlay');
 const close_modal_btn = document.querySelector('.close-modal');
 const show_modal_btn = document.querySelector('.btn--guide');
 
-// const winner_trophy = document.querySelector('.trophy');
-
 // Starting Condition
 let scores, currentScore, activePlayer, playing;
 const total_score = 100;
@@ -36,7 +34,6 @@ const init_game = function () {
   activePlayer = 0;
   playing = true;
 
-  // 1. Set all scores to 0
   current_score_0.textContent = 0;
   current_score_1.textContent = 0;
   player_0_el.classList.remove('player--winner');
@@ -44,10 +41,8 @@ const init_game = function () {
   player_1_el.classList.remove('player--winner');
   dice_el.classList.add('hidden');
 
-  // Trophy
   img.remove();
 
-  // Guide btn active
   show_modal_btn.classList.remove('hidden');
 
   // Set Player 1 as active player
@@ -77,24 +72,19 @@ const winner = function () {
 // Rolling dice functionality
 btn_roll.addEventListener('click', function () {
   if (playing) {
-    // Guide btn hidden
     show_modal_btn.classList.add('hidden');
 
-    // 1. Generating a random dice
     const dice = Math.trunc(Math.random() * 6) + 1;
 
-    // 2. Display dice
     dice_el.classList.remove('hidden');
     dice_el.src = `assets/dice-${dice}.png`;
 
     // 3. Check for dice rolled 1
     if (dice !== 1) {
-      // Add dice to the current score
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
-      // Switch to next player
       switch_player();
     }
   }
@@ -120,7 +110,6 @@ btn_hold.addEventListener('click', function () {
         .classList.remove('player--active');
       winner();
     } else {
-      // 3. If false switch to the next player
       switch_player();
     }
   }

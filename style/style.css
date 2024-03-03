@@ -91,7 +91,6 @@ li {
 }
 
 /*=== END OF GUIDE ===*/
-
 .player {
   flex: 50%;
   padding: 5rem;
@@ -298,7 +297,6 @@ li {
   }
   .player {
     padding: 3%;
-    /* height: 6rem; */
   }
   .score {
     font-size: 3.5rem;
