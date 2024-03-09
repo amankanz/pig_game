@@ -67,9 +67,6 @@ const switch_player = function () {
 
 const winner = function () {
   img.classList.add('trophy');
-  // activePlayer === 1
-  //   ? img.classList.add('trophy_1')
-  //   : img.classList.add('trophy_0');
 
   if (activePlayer === 0) {
     img.classList.add('trophy_0');
