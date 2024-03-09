@@ -24,6 +24,12 @@ let scores, currentScore, activePlayer, playing;
 const total_score = 100;
 
 const img = document.createElement('img');
+const reset_winner = function () {
+  img.classList.remove('trophy');
+  img.classList.remove('trophy_0');
+  img.classList.remove('trophy_1');
+  img.remove();
+};
 
 const init_game = function () {
   score_0_el.textContent = 0;
@@ -41,7 +47,7 @@ const init_game = function () {
   player_1_el.classList.remove('player--winner');
   dice_el.classList.add('hidden');
 
-  img.remove();
+  reset_winner();
 
   show_modal_btn.classList.remove('hidden');
 
@@ -61,9 +67,16 @@ const switch_player = function () {
 
 const winner = function () {
   img.classList.add('trophy');
-  activePlayer === 0
-    ? img.classList.add('trophy_0')
-    : img.classList.add('trophy_1');
+  // activePlayer === 1
+  //   ? img.classList.add('trophy_1')
+  //   : img.classList.add('trophy_0');
+
+  if (activePlayer === 0) {
+    img.classList.add('trophy_0');
+  } else if (activePlayer === 1) {
+    img.classList.add('trophy_1');
+    img.classList.remove('trophy_0');
+  }
   img.src = `assets/trophy.png`;
   if (scores[activePlayer] >= total_score)
     document.querySelector(`.player--${activePlayer}`).appendChild(img);
